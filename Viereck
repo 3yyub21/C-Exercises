@@ -1,0 +1,15 @@
+Console.Write("Geben Sie die Lənge ertser Seite des Vierecks: ");
+int a = int.Parse(Console.ReadLine());
+Console.Write("Geben Sie die Länge zweiter Seite des Vierecks: ");
+int b = int.Parse(Console.ReadLine());
+Console.Clear();
+
+for (int i = 0; i <= a; i++)
+{
+    for (int j = 0; j <= b; j++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+Console.ReadLine();
