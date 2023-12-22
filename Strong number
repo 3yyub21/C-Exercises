@@ -1,0 +1,25 @@
+Console.Write("Geben Sie ein Zahl ein: ");
+int Zahl = Convert.ToInt32(Console.ReadLine());
+int Summe = 0;
+
+for (int i = Zahl; i != 0; i = i / 10)
+{
+    int Produkt = 1;
+
+    for (int j = 1; j <= i % 10; j++)
+    {
+        Produkt = Produkt * j;
+
+    }
+    Summe = Summe + Produkt;
+}
+
+if (Summe == Zahl)
+{
+    Console.WriteLine("{0} ist Strong Zahl!", Zahl);
+}
+
+else
+{
+    Console.WriteLine("{0} ist nicht Strong Zahl!", Zahl);
+}
