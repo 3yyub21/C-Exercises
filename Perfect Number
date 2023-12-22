@@ -1,0 +1,26 @@
+Console.Write("Geben Sie ein Zahl ein: ");
+int Zahl = Convert.ToInt32(Console.ReadLine());
+int Summe = 0;
+Console.Write("Die Positive Divisor sind:");
+
+for (int i = 1; i < Zahl; i++)
+{
+    if (Zahl % i == 0)
+    {
+        Console.Write("{0}" + " ", i);
+        Summe = Summe + i;
+    }
+}
+
+Console.Write("\n");
+Console.WriteLine("Die Summe ist: {0}", Summe);
+
+if (Summe == Zahl)
+{
+    Console.WriteLine($"{Zahl} ist Perfect Number!");
+}
+
+else
+{
+    Console.WriteLine($"{Zahl} ist kein Perfect Number!");
+}
