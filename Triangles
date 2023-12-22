@@ -1,0 +1,57 @@
+Console.Write("Geben Sie die Höhe ein: ");
+int Höhe = int.Parse(Console.ReadLine());
+Console.Clear();
+
+for (int i = 1; i <= Höhe; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write("#");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("\n\n");
+
+for (int i = 0; i <= Höhe; i++)
+{
+    for (int j = Höhe; j > i; j--)
+    {
+        Console.Write("#");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("\n\n");
+
+for (int i = 1; i <= Höhe; i++)
+{
+    for (int j = Höhe; j > i; j--)
+    {
+        Console.Write(" ");
+    }
+
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write("#");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("\n\n");
+
+for (int i = 0; i <= Höhe; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write(" ");
+    }
+
+    for (int j = Höhe; j > i; j--)
+    {
+        Console.Write("#");
+    }
+    Console.WriteLine();
+}
+
+Console.ReadLine();
