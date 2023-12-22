@@ -1,0 +1,27 @@
+Console.Write("Geben Sie eine Anfangszahl ein: ");
+int Anfangszahl = Convert.ToInt32(Console.ReadLine());
+Console.Write("Geben Sie eine Endzahl ein: ");
+int Endzahl = Convert.ToInt32(Console.ReadLine());
+Console.Write("Alle Strong Zahlen Zwischen {0} und {1} sind : ", Anfangszahl, Endzahl);
+
+for (int i = Anfangszahl; i <= Endzahl; i++)
+{
+    int Summe = 0;
+
+    for (int j = i; j != 0; j = j / 10)
+    {
+        int Factorial = 1;
+
+        for (int k = 1; k <= j % 10; k++)
+        {
+            Factorial = Factorial * k;
+        }
+
+        Summe = Summe + Factorial;
+    }
+
+    if (Summe == i)
+    {
+        Console.Write("{0}" + " ", i);
+    }
+}
