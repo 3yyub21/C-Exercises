@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgaben 
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Geben Sie eine Zahl ein: ");
+            int Zahl = int.Parse(Console.ReadLine());
+            int Anzahl = 0;
+
+            for(int i = 1; i <= Zahl; i++)
+            {
+                if (Zahl % i == 0)
+                {
+                    Anzahl++;
+                }
+            }
+
+            if (Anzahl == 2)
+            {
+                Console.WriteLine($"{Zahl} is Prime Number!");
+            }
+
+            else
+            {
+                Console.WriteLine($"{Zahl} is not Prime Number!");
+            }
+        }
+    }
+}
