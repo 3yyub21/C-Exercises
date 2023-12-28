@@ -1,0 +1,42 @@
+using System;
+
+namespace Aufgaben
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Geben Sie die Anfangszahl ein: ");
+            int Anfangzahl = int.Parse(Console.ReadLine());
+            Console.Write("Geben Sie die Endzahl ein: ");
+            int Endzahl = int.Parse(Console.ReadLine());
+            int Summe = 0;
+
+            static void PerfectNumberInRange(int a,int b,int c)
+            {
+                for (int i = a; i <= b; i++)
+                {
+                    c = 0;
+
+                    for (int j = 1; j  < i; j ++)
+                    {
+                        if (i % j == 0)
+                        {
+                            c += j;
+                        }
+                    }
+
+                    if (c == i)
+                    {
+                        Console.Write(i + " ");
+                    }
+                }
+            }
+
+            Console.Write("Die Perfect Zahlen in Range von {0} bis {1} sind: ",Anfangzahl,Endzahl);
+            PerfectNumberInRange(Anfangzahl, Endzahl, Summe);
+
+            Console.ReadLine();
+        }
+    }
+}
