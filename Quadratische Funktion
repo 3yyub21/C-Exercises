@@ -1,0 +1,104 @@
+using System;
+
+namespace Aufgaben
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            //Quadratische Funktion mit Methoden!
+
+            string Wiederholung;
+            do
+            {
+                Console.WriteLine("Menü:");
+                Console.WriteLine("1:Schnittpunk Quadratische Funktion mit der Y-Achse bestimmen");
+                Console.WriteLine("2:Nullstellen Quadratische Funktion bestimmen");
+                Console.WriteLine("3:Programm beenden");
+
+                string Auswahl = Console.ReadLine();
+                Console.Clear();
+
+                switch (Auswahl)
+                {
+                    case "1":
+                        Console.Write("a = ");
+                        double a = double.Parse(Console.ReadLine());
+                        Console.Write("b = ");
+                        double b = double.Parse(Console.ReadLine());
+                        Console.Write("c = ");
+                        double c = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Der Schnittpunkt der Quadratischen Funktion mit der Y-Achse ist:S(0,{0})", SchnittPunktMitDerYAchse(c));
+                        break;
+
+                    case "2":
+                        Console.Write("a = ");
+                        double A = double.Parse(Console.ReadLine());
+                        Console.Write("b = ");
+                        double B = double.Parse(Console.ReadLine());
+                        Console.Write("c = ");
+                        double C = double.Parse(Console.ReadLine());
+                        double D = Diskriminant(A, B, C);
+                        double m = M(A, B);
+                        double X1 = NullstelleX1(A, B, C);
+                        double X2 = NullstelleX2(A, B, C);
+
+                        if (D > 0)
+                        {
+                            Console.WriteLine("Es gibt zwei unterschidliche Nullstellen,nämmlich: X1 = {0} und X2 = {1}", X1, X2);
+                        }
+
+                        else if (D == 0)
+                        {
+                            Console.WriteLine("Es gibt zwei gleiche Nullstellen,nämmlich: X1 = {0} und X2 = {1}", m, m);
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Es gibt keine reelen Nullstellen!");
+                        }
+
+                        break;
+
+
+                    default:
+                        Environment.Exit(0);
+                        break;
+                }
+
+                Console.WriteLine("Weitere Berechnungen?,(j/n)");
+                Wiederholung = Console.ReadLine();
+                Console.Clear();
+            } while (Wiederholung == "J" || Wiederholung == "j");
+        }
+
+        static double SchnittPunktMitDerYAchse(double c)
+        {
+            double Ausgabe = c;
+            return Ausgabe;
+        }
+
+        static double Diskriminant (double a, double b , double c)
+        {
+            double D = ((b * b) - 4 * a * c);
+            return D;
+        }
+        static double NullstelleX1(double a, double b, double c)
+        {
+            double X1 = ((-b) + Math.Sqrt(Diskriminant(a, b, c))) / (2 * a);
+            return X1;
+        }
+
+        static double NullstelleX2(double a, double b, double c)
+        {
+            double X2 = ((-b) - Math.Sqrt(Diskriminant(a, b, c))) / (2 * a);
+            return X2;
+        }
+
+        static double M (double a,double b)
+        {
+            double m = (-b) / (2 * a);
+            return m;
+        }
+    }
+}
