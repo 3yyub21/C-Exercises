@@ -1,0 +1,34 @@
+using System;
+
+namespace Aufgabe
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //You-Tube Exercise 3:
+
+            Console.Write("num = ");
+            int num = int.Parse(Console.ReadLine());
+            int sum = 0;
+            Console.Write("Digit Sum of {0} is: ", num);
+            DigitSum(num, sum);
+            Console.ReadLine();
+        }
+
+        static void DigitSum(int num, int sum)
+        {
+            int rest = num % 10;
+
+            if(rest == 0)
+            {
+                Console.Write(sum);
+                return;
+            }
+
+            sum += rest;
+            num /= 10;
+            DigitSum(num, sum);
+        }
+    }
+}
