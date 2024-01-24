@@ -6,8 +6,6 @@ namespace Aufgabe
     {
         static void Main(string[] args)
         {
-            //You-Tube Exercise 3:
-
             Console.Write("num = ");
             int num = int.Parse(Console.ReadLine());
             int sum = 0;
